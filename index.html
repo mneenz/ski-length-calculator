@@ -31,14 +31,16 @@
               <option value="8">8+ years</option>
             </select>
             <br/>
-            <label>What style do you prefer?</label>
-            <select name="style" id="style">
-              <option value="Classic">Classic</option>
-              <option value="Freestyle">Freestyle</option>
-            </select>
-            <div id="totalPrice"></div>
+            <div id="style-block">
+              <label>What style do you prefer?</label>
+              <select name="style" id="style">
+                <option value="Classic">Classic</option>
+                <option value="Freestyle">Freestyle</option>
+              </select>
+            </div>
           </fieldset>
-          <input type="submit" class="button" onclick="calculateTotal()">
+          <input type="submit" class="btn" onclick="calculateTotal()">
+          <div id="totalLength"></div>
         </form>
 
       </section>

@@ -1,12 +1,11 @@
 /*! TYPOGRAPHY  */
 
-$primary-font:       'Playfair Display', serif;
-$secondary-font:      'Open Sans', sans-serif;
+$primary-font:      'Open Sans', sans-serif;
 
 /* --- Convert percent font sizes to em ---*/
 @mixin font-size($sizeValue: 12 ) {
   font-size: $sizeValue + px; //fallback for old browsers
-  font-size: (0.0625 * $sizeValue) + rem;
+  font-size: (0.0652 * $sizeValue) + rem;
 }
 
 @mixin line-height($heightValue: 20 ) {
@@ -20,13 +19,13 @@ $secondary-font:      'Open Sans', sans-serif;
 }
 
 
-html, .paragraph, p {
+html, body, .paragraph, p {
   font: {
-    family:$secondary-font;
+    family:$primary-font;
     weight: normal;
   }
 	margin-top: 10px;
-	@include size(15, 20);
+	@include size(13, 18);
   color:black;
 
   strong,b {
@@ -56,10 +55,10 @@ li {
 
 h1 {
   font: {
-    family:$secondary-font;
+    family:$primary-font;
    	weight: bold;
   }
-	@include size(30, 35);
+	@include size(21, 28);
 }
 
 
@@ -68,7 +67,7 @@ h2 {
     family:$primary-font;
    	weight: normal;
   }
-	@include size(20, 25);
+	@include size(17, 21);
 }
 
 /*------LINKS-----*/

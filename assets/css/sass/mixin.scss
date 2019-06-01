@@ -9,33 +9,11 @@
   transition: $args;
 }
 
-/*Car & Scooter moving animation*/
-@-moz-keyframes vehicleMoving {
-	0%   {left:-25%;}
-	100% {left:100%;}
-}
-
-@-webkit-keyframes vehicleMoving{
-	0%   {left:-25%;}
-	100% {left:100%;}
-}
-
-@-moz-keyframes tyre-rotate {
-  from{-moz-transform:rotate(-360deg);}
-  to{-moz-transform:rotate(0deg);}
-}
-@-webkit-keyframes tyre-rotate {
-  from{-webkit-transform:rotate(-360deg);}
-  to{-webkit-transform:rotate(0deg);}
-}
 
 /*Buttons*/
 .btn {
-  float:right;
   position: relative;
   padding: 10px;
-  width: auto;
-  border-radius: 9px;
   cursor: pointer;
   overflow: hidden;
   box-sizing: border-box;
@@ -55,7 +33,7 @@
     height: 100%;
     font-size: 125%;
     line-height: 2;
-    color: #fff;
+    color: white;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;

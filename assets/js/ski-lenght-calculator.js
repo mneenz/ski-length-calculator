@@ -5,9 +5,9 @@ var inputStyleValue = '';
 
 function ageFormCheck(that) {
     if (that.value == 8) {
-        document.getElementById("style").style.display = "block";
+        document.getElementById("style-block").style.display = "block";
     } else {
-        document.getElementById("style").style.display = "none";
+        document.getElementById("style-block").style.display = "none";
     }
 }
 
@@ -26,8 +26,12 @@ function calculateTotal() {
    } else if (inputAgeValue == 5) {
      lengthCalculation = (inputLengthValue + 10) + '-' + (inputLengthValue + 20);
    //Klassisk: kroppslängd + 20cm. Klassiska skidor tillverkas bara till längder upp till 207cm.
-   } else if ((inputAgeValue == 8) && (inputStyleValue == 'Classic') && (inputLengthValue < 207)) {
+ } else if ((inputAgeValue == 8) && (inputStyleValue == 'Classic')){
+   if(inputLengthValue < 207) {
      lengthCalculation = (inputLengthValue + 20);
+   } else {
+     lengthCalculation = 'Classic skis are only manufactured up to 207cm. Try Freestyle instead.';
+   }
    //Fristil: kroppslängd + 10 till 15 cm.
    } else if ((inputAgeValue == 8) && (inputStyleValue == 'Freestyle')) {
      lengthCalculation1 = inputLengthValue + 10;
@@ -40,15 +44,18 @@ function calculateTotal() {
     }
    }
 
-
-
    //display the result
-   var divobj = document.getElementById('totalPrice');
-   divobj.style.display='block';
-   divobj.innerHTML = "You should get ski's with the following size:"+lengthCalculation+ ' cm';
+   var totalLengthObject = document.getElementById('totalLength');
+   totalLengthObject.style.display='block';
+   //If the user has chosen classic and is over 207cm tall we need a special text
+   if ((inputAgeValue == 8) && (inputStyleValue == 'Classic') && (inputLengthValue > 207)){
+     totalLengthObject.innerHTML = lengthCalculation;
+   } else {//Otherwise, just run the normal totalLengthText
+     totalLengthObject.innerHTML = "You should get skis with the following size: "+lengthCalculation+ ' cm';
+   }
 }
 
 function hideTotal() {
-   var divobj = document.getElementById('totalPrice');
-   divobj.style.display='none';
+   var totalLengthObject = document.getElementById('totalLength');
+   totalLengthObject.style.display='none';
 }
