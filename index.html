@@ -5,24 +5,27 @@
     <title>Ski Length Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Stylesheets-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Playfair+Display:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,600i,700" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css" type="text/css">
     <link rel="stylesheet" href="./assets/dist/css/style.css" type="text/css">
   </head>
   <body>
-    <section role="main" class="wrapper">
+    <section role="main" id="wrapper">
       <!--Header-->
       <header id="header" class="header">
         <h1>Ski Lenght Calculator</h1>
-        <h2>Calculate the lenght of your ski's</h2>
+        <h2>Calculate the lenght of your skis</h2>
       </header>
 
       <!--Content-->
       <section id="content">
-        <form action="" id="skiLengthForm" onsubmit="return false;">
+        <form id="skiLengthForm" onsubmit="return false;">
           <fieldset>
             <label>How tall are you?</label>
-            <input type="range" min="1" max="300" value="150" name="length" class="length" id="length">
+            <div id="rangeValueWrapper">
+              <input type="range" min="1" max="300" value="150" name="length" class="length" id="length">
+              <output for="length" id="rangeText">150cm</output>
+            </div>
 
             <label>How old are you?</label>
             <select id="age" name='age' onchange="ageFormCheck(this);">
@@ -39,7 +42,7 @@
               </select>
             </div>
           </fieldset>
-          <input type="submit" class="btn" onclick="calculateTotal()">
+          <input type="submit" class="btn" value="Calculate ski length" onclick="calculateTotal()">
           <div id="totalLength"></div>
         </form>
 

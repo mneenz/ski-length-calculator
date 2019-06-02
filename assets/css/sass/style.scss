@@ -22,7 +22,6 @@ body {
   box-sizing: border-box;
 	font-family:$primary-font;
 	color:black;
-  background:$light-grey; 
 
   @media screen and (min-width : 1024px) {
     width: 375px;//iPhone 6/7/8/X
@@ -52,9 +51,19 @@ body {
 	}
 }
 
+#wrapper{
+  height:100%;
+  overflow:hidden;
+}
+
 #content {
-  margin: 20px auto;
-  width: 90%;
+  height: 100%;
+  margin: 0px auto;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background: $light-grey;
+  border: 1px solid $grey;
 }
 
 /*------FOOTER-----*/

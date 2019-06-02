@@ -21,29 +21,11 @@
   font-weight: bold;
   color: white !important;
   @include transition(all .3s); /*Taken from mixin.scss*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance:none;
 
   &:hover {
-    padding-right: 30px;
     background:$link-hover;
-  }
-
-  &:before {
-    content: "→";
-    position: absolute;
-    height: 100%;
-    font-size: 125%;
-    line-height: 2;
-    color: white;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    right: -20px;
-    top: 0;
-    opacity:0;
-  }
-
-  &:hover:before {
-    right: 8px;
-    opacity:1;
   }
 }
